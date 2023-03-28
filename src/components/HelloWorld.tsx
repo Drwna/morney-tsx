@@ -1,5 +1,6 @@
 import type { PropType } from 'vue'
 import { defineComponent, ref } from 'vue'
+import s from './HelloWorld.module.scss'
 
 export const HelloWorld = defineComponent({
   props: {
@@ -18,6 +19,9 @@ export const HelloWorld = defineComponent({
             Edit
             <code>components/HelloWorld.vue</code> to test HMR
           </p>
+        </div>
+        <div>
+          <p class={s.wrapper}> css moudle css </p>
         </div>
       </div>
     )
