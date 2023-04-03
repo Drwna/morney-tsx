@@ -1,5 +1,5 @@
 import { defineComponent } from 'vue'
-import { HelloWorld } from './components/helloWorld/HelloWorld'
+import { HelloWorld } from '@/components/helloWorld/HelloWorld'
 
 export default defineComponent({
   setup: () => {

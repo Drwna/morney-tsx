@@ -1,8 +1,8 @@
 import type { PropType } from 'vue'
 import { defineComponent, ref } from 'vue'
-import { Icon } from '../icons/Icon'
 import IconBack from '../icons/IconBack.vue'
 import s from './HelloWorld.module.scss'
+import { Icon } from '@/components/icons/Icon'
 
 export const HelloWorld = defineComponent({
   props: {
