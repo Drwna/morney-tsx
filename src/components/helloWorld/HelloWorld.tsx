@@ -1,5 +1,7 @@
 import type { PropType } from 'vue'
 import { defineComponent, ref } from 'vue'
+import { Icon } from '../icons/Icon'
+import IconBack from '../icons/IconBack.vue'
 import s from './HelloWorld.module.scss'
 
 export const HelloWorld = defineComponent({
@@ -22,6 +24,11 @@ export const HelloWorld = defineComponent({
         </div>
         <div>
           <p class={s.wrapper}> css moudle css </p>
+        </div>
+        <div>
+          图标:
+          <IconBack />
+          <Icon name='right' />
         </div>
       </div>
     )
