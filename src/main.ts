@@ -3,6 +3,7 @@ import { createPinia } from 'pinia'
 import 'virtual:svg-icons-register'
 import App from './App'
 import router from '@/router/index'
+import './styles/reset.css'
 
 const app = createApp(App)
 
