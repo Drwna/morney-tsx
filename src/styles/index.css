@@ -5,6 +5,7 @@
 
 :root {
   --primary-color: #c4c4c4;
+  --navbar-bg: #fff;
   --navbar-text: #000;
   --navbar-active-color: #f00;
 }

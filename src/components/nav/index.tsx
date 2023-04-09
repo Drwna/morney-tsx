@@ -4,7 +4,7 @@ import { RouterLink } from 'vue-router'
 import { Icon } from '../icons/Icon'
 import s from './index.module.scss'
 
-export const Nav = defineComponent({
+export const MNavbar = defineComponent({
   props: {
     name: {
       type: String as PropType<string>,
