@@ -1,7 +1,7 @@
 import type { PropType } from 'vue'
 import { defineComponent } from 'vue'
 import s from './index.module.scss'
-import { MNavbar } from '@/components/nav'
+import { MLayout } from '@/components/layout'
 
 const MoneyView = defineComponent({
   props: {
@@ -11,11 +11,11 @@ const MoneyView = defineComponent({
   },
   setup: (props, context) => {
     return () => (
-      <>
-        <div className={s.layout}>
-        <MNavbar />
+      <MLayout>
+        <div className={s.wrapper}>
+          hello
         </div>
-      </>
+      </MLayout>
     )
   },
 })
