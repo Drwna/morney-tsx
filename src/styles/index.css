@@ -1,0 +1,10 @@
+.page {
+  width: 100vw;
+  height: 100vh;
+}
+
+:root {
+  --primary-color: #c4c4c4;
+  --navbar-text: #000;
+  --navbar-active-color: #f00;
+}

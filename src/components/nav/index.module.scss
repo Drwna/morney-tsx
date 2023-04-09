@@ -1,0 +1,22 @@
+.nav {
+  font-size: 12px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  box-shadow: 0 0 3px rgb(0 0 0 / 30%);
+  padding: 4px 0;
+
+  &_item {
+    justify-self: center;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 8px;
+    color: var(--navbar-text);
+
+    &_active {
+      color: var(--navbar-active-color);
+    }
+  }
+
+
+}
