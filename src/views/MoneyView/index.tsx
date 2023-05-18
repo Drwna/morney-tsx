@@ -10,9 +10,17 @@ const MoneyView = defineComponent({
   },
   setup: (props, context) => {
     return () => (
-      <div className={s.wrapper}>
-        hello
-      </div>
+      <>
+        <div class={s.wrapper}>
+          hello
+        </div>
+        <div class="text-yellow-900">
+          测试 tailwind css
+        </div>
+        <h1 class="text-3xl font-bold underline">
+          Hello world!
+        </h1>
+      </>
     )
   },
 })

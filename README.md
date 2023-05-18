@@ -295,12 +295,43 @@ export const Icon = defineComponent({
 ```
 
 
+## 安装使用 Tailwind CSS
+
+**1. 安装**
+
+`pnpm install -D tailwindcss postcss autoprefixer`
 
 
+**2. 初始化配置**
 
+`npx tailwindcss init -p`
 
+执行完这句命令后，会在根目录下生成一个 `tailwind.config.js` 文件和一个 `postcss.config.js` 文件。
 
+**3. 配置 `tailwind.config.js`**
 
+```js
+export default {
+  content: [
+    './index.html',
+    './src/**/*.{js,ts,jsx,tsx}',
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
+
+**4. 配置 CSS**
+
+在 index.css 文件中引入 tailwindcss
+
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
 
 
 
