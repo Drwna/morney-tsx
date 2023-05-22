@@ -12,14 +12,14 @@ export const MNavbar = defineComponent({
   },
   setup: (props, context) => {
     return () => (
-      <nav className={s.nav}>
-        <RouterLink class={s.nav_item} to='/money' exactActiveClass={s.nav_item_active}>
-          <Icon name='money' />
-          记账页
-        </RouterLink>
+      <nav class={s.nav}>
         <RouterLink class={s.nav_item} to='/label' exactActiveClass={s.nav_item_active}>
           <Icon name='labels' />
           标签页
+        </RouterLink>
+        <RouterLink class={s.nav_item} to='/money' exactActiveClass={s.nav_item_active}>
+          <Icon name='money' />
+          记账页
         </RouterLink>
         <RouterLink class={s.nav_item} to='/statistics' exactActiveClass={s.nav_item_active}>
           <Icon name='statistics' />

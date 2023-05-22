@@ -1,25 +1,16 @@
-import type { PropType } from 'vue'
-import { defineComponent } from 'vue'
-import s from './index.module.scss'
+import { defineComponent, ref } from 'vue'
+import { NumberPad } from './NumberPad'
 
 const MoneyView = defineComponent({
-  props: {
-    name: {
-      type: String as PropType<string>,
-    },
-  },
   setup: (props, context) => {
+    const num = ref<string>('0')
     return () => (
       <>
-        <div class={s.wrapper}>
-          hello
-        </div>
-        <div class="text-yellow-900">
-          测试 tailwind css
-        </div>
-        <h1 class="text-3xl font-bold underline">
-          Hello world!
-        </h1>
+        <div>1. 标签</div>
+        <div>2. 备注</div>
+        <div>3. 类型</div>
+        {num.value}
+        <NumberPad v-model={num.value} />
       </>
     )
   },
