@@ -13,10 +13,13 @@ export const Icon = defineComponent({
       type: [String, Number] as PropType<string | number>,
       default: 24,
     },
+    onClick: {
+      type: Function as PropType<() => void>,
+    },
   },
   setup: (props, context) => {
     return () => (
-      <svg style={{ fontSize: props.size }} class="icon" aria-hidden="true">
+      <svg onClick={props.onClick} style={{ fontSize: props.size }} class="icon" aria-hidden="true">
         <use xlinkHref={`#icon-${props.name}`}></use>
       </svg >
     )
