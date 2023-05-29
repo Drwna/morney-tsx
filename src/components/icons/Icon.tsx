@@ -1,7 +1,7 @@
 import type { PropType } from 'vue'
 import { defineComponent } from 'vue'
 
-type Name = 'right' | 'left' | 'labels' | 'money' | 'statistics'
+type Name = 'right' | 'left' | 'labels' | 'money' | 'statistics' | 'clear'
 
 export const Icon = defineComponent({
   props: {
@@ -15,17 +15,9 @@ export const Icon = defineComponent({
     },
   },
   setup: (props, context) => {
-    const icon = {
-      width: '1em',
-      height: '1em',
-      verticalAlign: '-0.15em',
-      fill: 'currentColor',
-      overflow: 'hidden',
-      fontSize: props.size,
-    }
     return () => (
-      <svg style={icon} class="icon" aria-hidden="true">
-        <use xlink:href={`#icon-${props.name}`}></use>
+      <svg style={{ fontSize: props.size }} class="icon" aria-hidden="true">
+        <use xlinkHref={`#icon-${props.name}`}></use>
       </svg >
     )
   },
