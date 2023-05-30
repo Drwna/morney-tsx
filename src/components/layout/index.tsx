@@ -5,8 +5,8 @@ import s from './index.module.scss'
 export const MLayout = defineComponent({
   setup: (props, context) => {
     return () => (
-      <div className={s.layout}>
-        <div className={s.main}>
+      <div class={s.layout}>
+        <div class={s.main}>
           {context.slots.default?.()}
         </div>
         <MNavbar />
