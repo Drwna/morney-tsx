@@ -13,8 +13,18 @@ const routes: RouteRecordRaw[] = [
   },
   {
     path: '/label',
-    name: 'Label',
-    component: () => import('@/views/LabelView'),
+    children: [
+      {
+        path: '',
+        name: 'Label',
+        component: () => import('@/views/LabelView'),
+      },
+      {
+        path: 'edit/:id',
+        name: 'LabelEdit',
+        component: () => import('@/views/LabelEditView'),
+      },
+    ],
   },
   {
     path: '/statistics',
