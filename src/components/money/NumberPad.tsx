@@ -33,8 +33,6 @@ export const NumberPad = defineComponent({
         number.value = number.value.slice(0, -1)
     }
     const ok = () => {
-      if (number.value === '0')
-        return
       emit('submit', number.value)
       clear()
     }
