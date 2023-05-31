@@ -1,5 +1,11 @@
 import type { PropType } from 'vue'
-import { defineComponent } from 'vue'
+import { defineComponent, ref } from 'vue'
+import { Tabs } from '@/components/Tabs'
+
+const RecordTypeList = [
+  { name: '支出', value: 'expense' },
+  { name: '收入', value: 'income' },
+]
 
 const StatisticView = defineComponent({
   props: {
@@ -7,11 +13,16 @@ const StatisticView = defineComponent({
       type: String as PropType<string>,
     },
   },
-  setup: (props, context) => {
+  setup: () => {
+    const type = ref('income')
     return () => (
-      <div>
-        统计
-      </div>
+      <>
+        <Tabs dataSource={RecordTypeList} v-model:value={type.value} />
+        <div>
+          {type.value}
+          <div> 没有记录 </div>
+        </div>
+      </>
     )
   },
 })
