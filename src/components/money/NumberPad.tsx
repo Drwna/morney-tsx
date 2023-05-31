@@ -6,6 +6,9 @@ export const NumberPad = defineComponent({
     modelValue: {
       type: String as PropType<string>,
     },
+    onSubmit: {
+      type: Function as PropType<() => void>,
+    },
   },
   emits: ['update:modelValue', 'submit'],
   setup: (props, { emit }) => {
