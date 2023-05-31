@@ -3,11 +3,7 @@ import { Tabs } from '@/components/Tabs'
 import { NumberPad } from '@/components/money/NumberPad'
 import { FormItem } from '@/components/money/FormItem'
 import { Tags } from '@/components/money/Tags'
-
-const recordTypeList = [
-  { name: '支出', value: '-' },
-  { name: '收入', value: '+' },
-]
+import RecordTypeList from '@/constants/RecordTypeList'
 
 interface ItemRecord {
   tags: string[]
@@ -31,7 +27,7 @@ const MoneyView = defineComponent({
           <Tags tagSource={tagSource} v-model={[record.tags, 'selected']} />
         </div>
         <FormItem name='备注' v-model={record.notes} placeholder='请输入备注信息' />
-        <Tabs dataSource={recordTypeList} v-model:value={record.type} />
+        <Tabs dataSource={RecordTypeList} v-model:value={record.type} />
         <NumberPad v-model={record.amound} />
       </div>
     )

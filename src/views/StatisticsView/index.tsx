@@ -1,11 +1,7 @@
 import type { PropType } from 'vue'
 import { defineComponent, ref } from 'vue'
 import { Tabs } from '@/components/Tabs'
-
-const RecordTypeList = [
-  { name: '支出', value: 'expense' },
-  { name: '收入', value: 'income' },
-]
+import RecordTypeList from '@/constants/RecordTypeList'
 
 const StatisticView = defineComponent({
   props: {
