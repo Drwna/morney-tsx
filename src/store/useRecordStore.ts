@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia'
+import clone from '@/util/clone'
 
 interface State {
   recordList: RecordItem[]
@@ -34,6 +35,16 @@ export const useRecordStore = defineStore('record', {
       if (hasName)
         return window.alert('标签名重复了')
       this.tagList.push(tag)
+    },
+    createRecord(record: RecordItem) {
+      const newRecodItem = clone(record)
+      if (parseFloat(newRecodItem.amount) <= 0)
+        return window.alert('金额不能为0')
+      if (newRecodItem.tags.length === 0)
+        return window.alert('请至少选择一个标签')
+      newRecodItem.createdAt = new Date().toISOString()
+      this.recordList.push(newRecodItem)
+      window.alert('保存成功')
     },
   },
   persist: {

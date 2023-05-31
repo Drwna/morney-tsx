@@ -10,13 +10,14 @@ const MoneyView = defineComponent({
   setup: () => {
     const record = reactive<RecordItem>({
       tags: [],
-      notes: '我是备注',
+      notes: '',
       type: 'expense',
       amount: '0',
     })
-    const saveRecord = () => {
-    }
     const recordStore = useRecordStore()
+    const submit = () => {
+      recordStore.createRecord(record)
+    }
     return () => (
       <div class="h-full flex flex-col">
         <div class="flex-1 overflow-auto">
@@ -24,7 +25,7 @@ const MoneyView = defineComponent({
         </div>
         <FormItem name='备注' v-model={record.notes} placeholder='请输入备注信息' />
         <Tabs dataSource={RecordTypeList} v-model:value={record.type} />
-        <NumberPad v-model={record.amount} onSubmit={saveRecord} />
+        <NumberPad v-model={record.amount} onSubmit={submit} />
       </div>
     )
   },
