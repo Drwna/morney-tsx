@@ -1,14 +1,15 @@
 import { createApp } from 'vue'
-import { createPinia } from 'pinia'
 import 'virtual:svg-icons-register'
-import App from './App'
-import router from '@/router/index'
+
+import App from '@/App'
+import pinia from '@/store'
+import router from '@/router'
+
 import './styles/reset.css'
 import './styles/index.css'
 
 const app = createApp(App)
 
-const pinia = createPinia()
 app.use(pinia)
 app.use(router)
 
