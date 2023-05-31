@@ -2,6 +2,7 @@ import type { PropType } from 'vue'
 import { defineComponent } from 'vue'
 import { RouterLink } from 'vue-router'
 import { Icon } from '@/components/icons/Icon'
+import { MButton } from '@/components/MButton'
 
 const LabelView = defineComponent({
   props: {
@@ -33,7 +34,7 @@ const LabelView = defineComponent({
           }
         </ul>
         <div class="mt-8 text-center">
-          <button class="bg-[#767676] h-[40px] text-white rounded-md px-4">新建标签</button>
+          <MButton> 新建标签 </MButton>
         </div>
       </div>
     )
