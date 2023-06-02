@@ -14,6 +14,10 @@ const LabelView = defineComponent({
   setup: () => {
     const recordStore = useRecordStore()
     const labels = recordStore.tagList
+    const createTag = () => {
+      const name = window.prompt('请输入标签名')
+      name && recordStore.createTag(name)
+    }
     return () => (
       <div class="">
         <ul class="px-4 bg-white">
@@ -29,7 +33,7 @@ const LabelView = defineComponent({
           }
         </ul>
         <div class="mt-8 text-center">
-          <MButton> 新建标签 </MButton>
+          <MButton onClick={createTag}> 新建标签 </MButton>
         </div>
       </div>
     )

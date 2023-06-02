@@ -41,6 +41,27 @@ export const useRecordStore = defineStore('record', {
         return window.alert('标签名重复了')
       this.tagList.push(tag)
     },
+    deleteTag(id: string) {
+      const index = this.tagList.findIndex(item => item.id === id)
+      if (index >= 0)
+        this.tagList.splice(index, 1)
+    },
+    updateTag(id: string, name: string) {
+      const idList = this.tagList.map(item => item.id)
+      if (idList.includes(id)) {
+        if (name.trim() === '')
+          return window.alert('标签名不能为空')
+        const names = this.tagList.map(item => item.name)
+        if (names.includes(name)) {
+          return window.alert('标签名重复了')
+        }
+        else {
+          const tag = this.tagList.filter(item => item.id === id)[0]
+          tag.name = name
+          return true
+        }
+      }
+    },
     createRecord(record: RecordItem) {
       const newRecodItem = clone(record)
       if (parseFloat(newRecodItem.amount) <= 0)
