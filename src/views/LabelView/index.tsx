@@ -3,6 +3,7 @@ import { defineComponent } from 'vue'
 import { RouterLink } from 'vue-router'
 import { Icon } from '@/components/icons/Icon'
 import { MButton } from '@/components/MButton'
+import { useRecordStore } from '@/store/useRecordStore'
 
 const LabelView = defineComponent({
   props: {
@@ -10,17 +11,11 @@ const LabelView = defineComponent({
       type: String as PropType<string>,
     },
   },
-  setup: (props, context) => {
-    const labels = [
-      { id: 1, name: '衣' },
-      { id: 2, name: '食' },
-      { id: 3, name: '住' },
-      { id: 4, name: '行' },
-    ]
+  setup: () => {
+    const recordStore = useRecordStore()
+    const labels = recordStore.tagList
     return () => (
       <div class="">
-        {/* <RouterLink to={'/label/edit/1'}>编辑</RouterLink>
-        <button>新增标签</button> */}
         <ul class="px-4 bg-white">
           {
             labels.map(label =>

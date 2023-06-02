@@ -20,6 +20,11 @@ export const useRecordStore = defineStore('record', {
     tagList: [...defaultTagList],
     currentTag: undefined,
   }),
+  getters: {
+    findTag: state => (id: string) => {
+      return state.tagList.filter(item => item.id === id)[0]
+    },
+  },
   actions: {
     createTag(name: string | undefined | null) {
       if (name === null || name === undefined)

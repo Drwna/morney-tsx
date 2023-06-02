@@ -1,10 +1,11 @@
 import type { PropType } from 'vue'
-import { defineComponent, ref } from 'vue'
+import { defineComponent } from 'vue'
 
 import { useRoute, useRouter } from 'vue-router'
 import { Icon } from '@/components/icons/Icon'
 import { FormItem } from '@/components/money/FormItem'
 import { MButton } from '@/components/MButton'
+import { useRecordStore } from '@/store/useRecordStore'
 
 export const LabelEditView = defineComponent({
   props: {
@@ -16,7 +17,8 @@ export const LabelEditView = defineComponent({
     const route = useRoute()
     const router = useRouter()
     const { id } = route.params
-    const tagName = ref(id)
+    const recordStore = useRecordStore()
+    const tagName = recordStore.findTag(id as string).name
     const deleteLabel = () => {
       const flag = window.confirm('确定删除标签吗？')
     }
@@ -27,7 +29,7 @@ export const LabelEditView = defineComponent({
           <span>编辑标签</span>
           <Icon name="left" class="invisible" />
         </div>
-        <FormItem name="标签名" v-model={tagName.value} class="bg-white mt-2" />
+        <FormItem name="标签名" v-model={tagName} class="bg-white mt-2" />
         <div class="mt-8 text-center">
           <MButton onClick={deleteLabel}> 删除标签 </MButton>
         </div>
