@@ -22,7 +22,7 @@ const StatisticView = defineComponent({
   setup: () => {
     const recordStore = useRecordStore()
     const recordList = recordStore.recordList
-    const type = ref('expense')
+    const type = ref<TransactionType>('expense')
 
     /*
     [
