@@ -22,7 +22,7 @@ const StatisticView = defineComponent({
   setup: () => {
     const recordStore = useRecordStore()
     const recordList = recordStore.recordList
-    const type = ref('expense')
+    const type = ref<TransactionType>('expense')
 
     /*
     [
@@ -97,7 +97,7 @@ const StatisticView = defineComponent({
         <Tabs dataSource={RecordTypeList} v-model:value={type.value} />
         <ol>
           {
-            groupList.length === 0
+            groupList[0].items.length === 0
               ? <li class="flex justify-center items-center h-20 text-[#999]">暂无数据</li>
               : groupList.map(group => (
                 <li>

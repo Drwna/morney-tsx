@@ -6,7 +6,9 @@ interface Tag {
 interface RecordItem {
   tags: Tag[]
   notes: string
-  type: string
+  type: TransactionType
   amount: string
   createdAt?: string
 }
+
+type TransactionType = 'income' | 'expense'
