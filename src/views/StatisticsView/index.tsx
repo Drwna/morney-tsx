@@ -1,4 +1,3 @@
-import type { PropType } from 'vue'
 import { computed, defineComponent, reactive, ref, watchEffect } from 'vue'
 
 import dayjs from 'dayjs'
@@ -14,11 +13,6 @@ type GroupeList = {
 }[]
 
 const StatisticView = defineComponent({
-  props: {
-    name: {
-      type: String as PropType<string>,
-    },
-  },
   setup: () => {
     const recordStore = useRecordStore()
     const recordList = recordStore.recordList
@@ -84,11 +78,11 @@ const StatisticView = defineComponent({
     }
 
     watchEffect(() => {
-      Object.assign(groupList, [{
+      groupList.splice(0, groupList.length, {
         title: dayjs(newList.value[0]?.createdAt).format('YYYY-MM-DD'),
         total: '0',
         items: [],
-      }])
+      })
       updateGroupList()
     })
 
