@@ -56,6 +56,20 @@ const StatisticView = defineComponent({
         .sort((a, b) => a.createdAt! > b.createdAt! ? -1 : 1),
     )
 
+    const beautifyDate = (date: string) => {
+      // 返回 今天、昨天、前天、YYYY-MM-DD
+      const today = dayjs().format('YYYY-MM-DD')
+      const yesterday = dayjs().subtract(1, 'day').format('YYYY-MM-DD')
+      const beforeYesterday = dayjs().subtract(2, 'day').format('YYYY-MM-DD')
+      if (date === today)
+        return '今天'
+      else if (date === yesterday)
+        return '昨天'
+      else if (date === beforeYesterday)
+        return '前天'
+      else return date
+    }
+
     const updateGroupList = () => {
       newList.value.forEach((record) => {
         const lastGroup = groupList[groupList.length - 1]
@@ -96,7 +110,7 @@ const StatisticView = defineComponent({
               : groupList.map(group => (
                 <li>
                   <h3 class="flex justify-between px-2 py-3 text-base">
-                    {group.title}
+                    {beautifyDate(group.title)}
                     <span>￥{group.total}</span>
                   </h3>
                   <ol>
