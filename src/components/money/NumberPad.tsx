@@ -1,5 +1,6 @@
 import type { PropType } from 'vue'
 import { computed, defineComponent } from 'vue'
+import { Icon } from '../icons/Icon'
 
 export const NumberPad = defineComponent({
   props: {
@@ -47,11 +48,15 @@ export const NumberPad = defineComponent({
           <button onClick={inputContent} class="h-16 bg-[#f2f2f2]">1</button>
           <button onClick={inputContent} class="h-16 bg-[#e8e8e8]">2</button>
           <button onClick={inputContent} class="h-16 bg-[#dedede]">3</button>
-          <button onClick={remove} class="h-16 bg-[#d3d3d3]">删除</button>
+          <button onClick={remove} class="h-16 bg-[#d3d3d3]">
+            <Icon name="backspace" class="mx-auto" />
+          </button>
           <button onClick={inputContent} class="h-16 bg-[#e8e8e8]">4</button>
           <button onClick={inputContent} class="h-16 bg-[#dedede]">5</button>
           <button onClick={inputContent} class="h-16 bg-[#d3d3d3]">6</button>
-          <button onClick={clear} class="h-16  bg-[#c9c9c9]">清空</button>
+          <button onClick={clear} class="h-16 bg-[#c9c9c9]">
+            <Icon name="clear" class="mx-auto" />
+          </button>
           <button onClick={inputContent} class="h-16 bg-[#dedede]">7</button>
           <button onClick={inputContent} class="h-16 bg-[#d3d3d3]">8</button>
           <button onClick={inputContent} class="h-16 bg-[#c9c9c9]">9</button>

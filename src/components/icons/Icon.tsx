@@ -1,7 +1,7 @@
 import type { PropType } from 'vue'
 import { defineComponent } from 'vue'
 
-type Name = 'right' | 'left' | 'labels' | 'money' | 'statistics' | 'clear'
+type Name = 'right' | 'left' | 'labels' | 'money' | 'statistics' | 'clear' | 'backspace'
 
 export const Icon = defineComponent({
   props: {
@@ -17,7 +17,7 @@ export const Icon = defineComponent({
       type: Function as PropType<() => void>,
     },
   },
-  setup: (props, context) => {
+  setup: (props) => {
     return () => (
       <svg onClick={props.onClick} style={{ fontSize: props.size }} class="icon" aria-hidden="true">
         <use xlinkHref={`#icon-${props.name}`}></use>

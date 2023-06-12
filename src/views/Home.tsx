@@ -12,7 +12,7 @@ export const Home = defineComponent({
   setup: (props, context) => {
     const counterStore = useCounterStore()
     return () => (
-      <div className="a">
+      <div class="a">
         HelloWorld
         <hr />
         {counterStore.count}
